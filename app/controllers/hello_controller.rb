@@ -3,6 +3,6 @@ class HelloController < ApplicationController
   end
 
   def greeting
-    @greeting = "Hello Ruby"
+    @greeting = "Hello Rails"
   end
 end

@@ -27,6 +27,8 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem "aws-sdk-s3"
+
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
 
@@ -54,6 +56,8 @@ group :development, :test do
 end
 
 group :development do
+  gem "solargraph"
+  gem "erb_lint"
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
@@ -62,6 +66,7 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem "hotwire-livereload", "~> 1.2"
 end
 
 group :test do

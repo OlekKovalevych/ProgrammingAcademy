@@ -1,34 +1,38 @@
 <style>
-  body { background-color: lightblue }
-  .special-heading {
-    color: darkblue;
-    font-family: cursive;
-    font-size: 50px;
-    text-align: center;
-    margin-top: 50px;
-  }
-  #P1 {
-    color: red;
-  }
+    body {
+        background-color: lightblue
+    }
+
+    .special-heading {
+        color: darkblue;
+        font-family: cursive;
+        font-size: 50px;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    #P1 {
+        color: red;
+    }
 </style>
 
 <h1 class="special-heading">Heading 1</h1>
 <p id="P1">Hello Ruby</p>
 
-<%= image_tag "https://www.animalfriends.co.uk/siteassets/media/images/article-images/cat-articles/38_afi_article1_caring-for-a-kitten-tips-for-the-first-month.png"%>
-<%= image_tag "https://www.northshorepetresort.com.au/wp-content/uploads/2021/09/pexels-blue-bird-7210293-1024x683.jpg"%>
-<p><%= link_to "Go to greeting!", controller: 'hello', action: 'greeting'%></p>
+<%= image_tag "https://www.animalfriends.co.uk/siteassets/media/images/article-images/cat-articles/38_afi_article1_caring-for-a-kitten-tips-for-the-first-month.png" %>
+<%= image_tag "https://www.northshorepetresort.com.au/wp-content/uploads/2021/09/pexels-blue-bird-7210293-1024x683.jpg" %>
+<p><%= link_to "Go to greeting!", controller: 'hello', action: 'greeting' %></p>
 
 <h1> Another heading</h1>
 
 <a href="#P1">Jump to paragraph 1!</a>
 
 <script>
-  var number = 1;
-  console.log(number);
-  number += 1;
-  console.log(number);
+    var number = 1;
+    console.log(number);
+    number += 1;
+    console.log(number);
 
-  var text = "Hello cute pets!";
-  document.getElementById("P1").innerHTML = text;
+    var text = "Hello cute pets!";
+    document.getElementById("P1").innerHTML = text;
 </script>
