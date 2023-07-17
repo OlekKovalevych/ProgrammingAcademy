@@ -1,15 +1,7 @@
-# API
-- Czym jest API?
-- Jak działa?
+# RSpec 
+- Czym jest Rspec? 
+- Jak tworzyć testy w Rspec?
 
-# REST
-- Czym jest Rest?
-- Dla czego służy?
-
-# JSON
-- Co to jest?
-- Kiedy go używamy?
-
-# Serializacja
-- Jakie ma znaczenie?
-- Co robi serializacja?
+# Factory
+- Czym jest Faktory? 
+- Po co warto używać tej technologii?
