@@ -1,12 +1,19 @@
 <h1> My Posts </h1>
-<% @posts.each do |post| %>
-    <h2> <%= post.title%> </h2>
-    <%= post.body %>
-    <% if post.photo.attached? %>
-      <image src="<%= (url_for(post.photo)) %>">
-    <% end %>
-    <h3> Comments: </h3>
-    <% post.comments.each do |comment| %>
-      <%= comment.body %> <br /> 
-    <%end%>
-<%end%>
+<ul class="list-group">
+  <% @posts.each do |post| %>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col-auto me-auto">
+          <h2> <%= post.title%> </h2>
+          <%= post.body %>
+        </div>
+        <div class="col-auto">
+          <%= button_to "Destroy", { controller: :posts, action: 'destroy', id: post.id },
+              method: :delete, class:"btn btn-outline-danger" %>
+        </div>
+      </div>
+    </li>
+  <%end%>
+</ul>
+</br>
+<%= link_to 'New Post', new_post_url, class:"btn btn-outline-primary"  %>
