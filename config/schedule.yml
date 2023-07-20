@@ -1,0 +1,4 @@
+discord_notification:
+  cron: "every day at ten"
+  class: "SendNotificationJob"
+  queue: default
