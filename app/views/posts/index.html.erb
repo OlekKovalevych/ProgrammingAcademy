@@ -17,3 +17,5 @@
 </ul>
 </br>
 <%= link_to 'New Post', new_post_url, class:"btn btn-outline-primary"  %>
+<%= button_to "Send notification about new post!", { controller: :posts, action: 'send_notification' },
+              method: :post, class:"btn btn-outline-primary" %>

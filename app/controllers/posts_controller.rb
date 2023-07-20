@@ -23,6 +23,10 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+  def send_notification
+    SendNotification.new(message: "Hey! Check out the newest post!").send
+  end
+
   private
 
   def post_params
