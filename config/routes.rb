@@ -4,8 +4,11 @@ require 'sidekiq/cron/web'
 
 Rails.application.routes.draw do
   devise_for :users
-  mount Sidekiq::Web => "/sidekiq" # mount Sidekiq::Web in your Rails app
 
+  authenticate :user do
+    mount Sidekiq::Web => "/sidekiq" # mount Sidekiq::Web in your Rails app
+  end
+  
   root "hello#index"
   get "/greeting", to: "hello#greeting"
   post "/send_notification", to: "posts#send_notification"
