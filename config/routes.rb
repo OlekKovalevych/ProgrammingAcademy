@@ -3,6 +3,7 @@ require 'sidekiq/cron/web'
 
 
 Rails.application.routes.draw do
+  devise_for :users
   mount Sidekiq::Web => "/sidekiq" # mount Sidekiq::Web in your Rails app
 
   root "hello#index"
