@@ -84,3 +84,5 @@ end
 
 gem "sidekiq", "~> 7.1"
 gem "sidekiq-cron"
+
+gem "devise", "~> 4.9"
