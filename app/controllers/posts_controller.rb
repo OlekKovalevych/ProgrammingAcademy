@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = posts
     @posts = Posts::Filter.new(posts: @posts, params: params).call
   end
 
@@ -31,6 +31,10 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :body, :photo)
+  end
+
+  def posts
+    PostPolicy::Scope.new(current_user, Post).resolve
   end
 end
 

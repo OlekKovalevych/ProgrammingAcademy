@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   
   root "hello#index"
   get "/greeting", to: "hello#greeting"
+  get "/rails_version", to: "hello#rails_version"
   post "/send_notification", to: "posts#send_notification"
   post "/hello", to: "hello#hello"
   resources :posts
