@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: %i[edit update destroy]
+
   def index
     @posts = Post.all
     @posts = Posts::Filter.new(posts: @posts, params: params).call
@@ -18,8 +20,18 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    if @post.update(post_params)
+      redirect_to posts_path
+    else
+      render :edit
+    end
+  end
+
   def destroy
-    Post.find(params[:id]).destroy
+    @post.destroy
     redirect_to posts_url
   end
 
@@ -28,6 +40,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:title, :body, :photo)

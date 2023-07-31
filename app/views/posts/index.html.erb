@@ -2,16 +2,19 @@
 <ul class="list-group">
   <% @posts.each do |post| %>
     <li class="list-group-item">
-      <div class="row">
-        <div class="col-auto me-auto">
-          <h2> <%= post.title%> </h2>
-          <%= post.body %>
+      <%= turbo_frame_tag 'edit_frame' do %>
+        <div class="row">
+          <div class="col-auto me-auto">
+            <h2> <%= post.title%> </h2>
+            <%= post.body %>
+          </div>
+          <div class="col-auto">
+          <%= link_to 'Edit', edit_post_path(post), class:"btn btn-outline-primary"  %>
+            <%= button_to "Destroy", { controller: :posts, action: 'destroy', id: post.id },
+                method: :delete, class:"btn btn-outline-danger" %>
+          </div>
         </div>
-        <div class="col-auto">
-          <%= button_to "Destroy", { controller: :posts, action: 'destroy', id: post.id },
-              method: :delete, class:"btn btn-outline-danger" %>
-        </div>
-      </div>
+      <% end %>
     </li>
   <%end%>
 </ul>

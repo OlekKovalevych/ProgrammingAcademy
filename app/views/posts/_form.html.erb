@@ -1,0 +1,17 @@
+<%= form_with model: @post do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  </br>
+  <div>
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+  <div>
+    <%= form.label :photo %>
+    <%= form.file_field :photo, class: "form-control form-control-sm" %>
+  <div>
+  <%= form.submit nil, class:"btn btn-outline-primary" %>
+  <%= button_tag 'Cancel', class:"btn btn-outline-primary" %>
+<% end %>
