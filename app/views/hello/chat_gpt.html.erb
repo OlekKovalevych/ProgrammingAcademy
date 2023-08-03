@@ -1,0 +1,10 @@
+<% if @conversation.present? %>
+    <% @conversation.each do |message| %>
+        <p> <%= message %> </p>
+    <% end %>
+<% end %>
+
+<%= form_with url: chat_gpt_path, method: :get do |form| %>
+    <%= form.text_field :message_to_chat %>
+    <%= form.submit 'Send' %>
+<% end %>

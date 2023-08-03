@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
   
   root "hello#index"
+  get "/chat_gpt", to: "hello#chat_gpt"
   get "/greeting", to: "hello#greeting"
   get "/rails_version", to: "hello#rails_version"
   post "/send_notification", to: "posts#send_notification"
