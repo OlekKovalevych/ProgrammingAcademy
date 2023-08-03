@@ -1,1 +1,7 @@
 <%= "#{@greeting}" %>
+
+<div data-controller="text-input">
+  <input type="text" data-action= "text-input#changed" data-text-input-target="input">
+  <h1 data-text-input-target="output"></h1>
+</div>
+
