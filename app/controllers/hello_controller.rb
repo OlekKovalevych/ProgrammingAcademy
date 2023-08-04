@@ -3,7 +3,7 @@ class HelloController < ApplicationController
   end
 
   def chat_gpt
-    cache = Rails.cache.read :conversation 
+    cache = Rails.cache.read :conversation
     @conversation = cache || []
     if params[:message_to_chat].present?
       response_from_chat = ChatGptService.new(message: params[:message_to_chat]).call
@@ -21,7 +21,7 @@ class HelloController < ApplicationController
     authorize current_user
     @rails_version = Rails.version
   end
-  
+
   def hello
     HelloJob.perform_at(30.seconds.from_now)
   end
